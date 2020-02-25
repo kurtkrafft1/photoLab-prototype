@@ -6,9 +6,8 @@ const HomeList = () => {
   const [backgroundImages, setBackgroundImage] = useState([]);
 
   const getBackgroundImage = () => {
-    return HomeManager.getRandomBackgroundUrl("452289/1000x1000").then(
+    return HomeManager.getRandomBackgroundUrl().then(
       imageFromAPI => {
-        console.log(imageFromAPI);
         setBackgroundImage(imageFromAPI);
       }
     );

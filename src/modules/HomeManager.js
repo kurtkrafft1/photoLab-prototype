@@ -1,7 +1,8 @@
-const remoteURL = "https://source.unsplash.com/collection/"
+const remoteURL = "https://source.unsplash.com/collection/452289/1000x1000"
 
 export default {
-    getRandomBackgroundUrl(parameter){ 
-        return fetch(`${remoteURL}parameter`)}
+    getRandomBackgroundUrl(){ 
+        return fetch(`${remoteURL}`)
+    }
     
 }
