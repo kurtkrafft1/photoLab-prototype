@@ -61,6 +61,7 @@ header h1 {
   -o-background-size: cover;
   background-size: cover;
   transition: ease-in 1s;
+  box-shadow: 3px 3px inset;
 }
 .home-screen h1 {
   color: white;
