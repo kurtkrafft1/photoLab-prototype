@@ -3,24 +3,28 @@ import HomeManager from "../modules/HomeManager";
 import HomeCard from "./HomeCards";
 
 const HomeList = () => {
-  const [backgroundImages, setBackgroundImage] = useState([]);
+  // const [backgroundImages, setBackgroundImage] = useState(1);
 
-  const getBackgroundImage = () => {
-    return HomeManager.getRandomBackgroundUrl().then(
-      imageFromAPI => {
-        setBackgroundImage(imageFromAPI);
-      }
-    );
-  };
-  useEffect(() => {
-    getBackgroundImage();
-  }, []);
-  const arr = [backgroundImages];
+  // const changeState = () => {
+  //   let newNumb = 2
+  //   setBackgroundImage(newNumb)
+  // }
+  // const getBackgroundImage = () => {
+  //   return HomeManager.getRandomBackgroundUrl().then(
+  //     imageFromAPI => {
+  //       setBackgroundImage(imageFromAPI);
+  //     }
+  //   );
+  // };
+
+  // useEffect(() => {
+  //   // getBackgroundImage();
+  //   changeState()
+  // }, []);
+  // const arr = [backgroundImages];
   return (
     <div className="home-container">
-      {arr.map(image => (
-        <HomeCard key="1" image={image} />
-      ))}
+        <HomeCard />
     </div>
   );
 };
