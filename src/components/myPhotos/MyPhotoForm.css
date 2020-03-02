@@ -1,0 +1,52 @@
+.newForm {
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10%;
+}
+.formAdd{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+    border: 1px solid black;
+    padding: 2%;
+}
+.updatePicBox{
+    display: flex;
+    justify-content: center;
+}
+.newImg {
+    width: 60%;
+}
+.desc-div {
+    display: flex;
+    flex-direction: column;
+}
+.descriptionClass{
+    align-self: flex-start;
+}
+form div {
+    margin-top: 5%;
+}
+#btn-submit {
+    margin-top: 5%;
+}
+#btn-submit:hover{
+    background: rgba(0, 0, 0, 0.849) !important;
+    color: white !important;
+}
+@media only screen and (max-width: 800px) {
+    .newForm{
+        margin-top: 100px;
+    }
+   #description {
+       width: 80%;
+   }
+   .newImg {
+    width: 100%;  
+    border: 50px solid white;  
+}
+}

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 //import the components we will need
 import PhotoCard from "./MyPhotoCard";
 import PhotographyMaster from "../../modules/PhotographyMaster";
-import ModalMaker from "../modal/ModalMaker";
 
-const MyPhotoList = () => {
+
+const MyPhotoList = props => {
   const [photos, setPhotos] = useState([]);
 
   const getPhotos = () => {
@@ -25,15 +25,16 @@ const MyPhotoList = () => {
   return (
     <div className="home-container">
       <div id="cards-container">
+      <div className="button-container">
+      <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/")}></i>
+<i id="icons"className=" big plus square outline icon" onClick={()=> props.history.push("myphotos/new")}></i>
+
+</div>
         {photos.map(photo => (
-          <PhotoCard key={photo.id} photo={photo} deleteCard={deleteCard} />
+          <PhotoCard key={photo.id} photo={photo} deleteCard={deleteCard} {...props} />
         ))}
       </div>
-      <div className="button-container">
-      <button type="button" onClick={() => ModalMaker()}>
-        Say Hi
-      </button>
-      </div>
+      
     </div>
   );
 };

@@ -1,35 +1,28 @@
 import React from "react";
+import withRouter, { Link, NavLink} from "react-router-dom"
 
 const Navbar = () => {
-    const query =  window.location.href.split('3000/')
-    console.log(query)
-    if(query[1]===""){
+
+        
+ 
         return(
             <header>
-                <h1><em>Welcome To PhotoLab</em></h1>
+                <NavLink to="/">
+                <h1>PH<i className="camera retro icon"></i>TOLAB</h1>
+                </NavLink>
+                <div className="navLinks">
+                <NavLink className="navItem" to="/myphotos">My Photos</NavLink>
+                <p className="bar">|</p>
+                <NavLink className="navItem" to="/friendsphotos">Friends Photos</NavLink>
+                <p className="bar">|</p>
+                <NavLink className="navItem" to="/settings">Settings</NavLink>
+                <p className="bar">|</p>
+                <NavLink className="navItem" to="/login">Logout</NavLink>
+           
+                </div>
             </header>
         )
-    } else if (query[1] ==="myphotos"){
-        return(
-            <header>
-                <h1><em>My Photos</em></h1>
-            </header>
-        )
-    }
-     else if (query[1] ==="friendsphotos"){
-        return(
-            <header>
-                <h1><em>Friends Photos</em></h1>
-            </header>
-        )
-    }
-     else if (query[1] ==="settings"){
-        return(
-            <header>
-                <h1><em>Settings</em></h1>
-            </header>
-        )
-    }
+   
   
 }
 export default Navbar;

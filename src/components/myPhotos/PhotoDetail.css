@@ -1,0 +1,44 @@
+#root > .Viewcard {
+    max-width: 400px;
+    margin: 10px auto;
+    margin-top: 150px;
+    border: 50px solid #C97B84;
+    border-radius: 10px;
+    display: flex;
+    align-content: center;
+    font-family: "Lora", sans-serif;
+    color: white;
+    transition: 0.3s ease;
+    
+  }
+  .newRoot {
+    height: 700px;
+    padding: 3%;
+    margin-top: 180px;
+  }
+  .Viewcard-content {
+    margin-top: 30px;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+  }
+  
+  button:disabled,
+  button:disabled:hover {
+    background-color: lightgray;
+  }
+  .card-photo {
+    width: 700px;
+  }
+  .icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .Viewcard-content h6 {
+    margin: 3%;
+    font-size: 13px;
+  }

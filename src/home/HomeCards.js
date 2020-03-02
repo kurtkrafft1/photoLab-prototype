@@ -21,10 +21,9 @@ const HomeCard = props => {
 return <div className="home-screen" id="home-screen" style={backgroundStyle}>
 
 <h1>PhotoLab</h1>
-<h3>A website for photo storage and organization</h3>
+<h3>A minimalist photo sharing app</h3>
 </div>
 }
 
 export default HomeCard;
 
-// no-repeat center center fixed
