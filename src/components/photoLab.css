@@ -90,9 +90,10 @@ header h1:hover {
   flex-direction: column;
   align-items: center;
   padding: 5%;
-  border: 200px solid white;
+  border: 150px solid white;
+  border-bottom-width: 50px;
   width: auto;
-  height: 800px;
+  height: 600px;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -116,7 +117,7 @@ header h1:hover {
 }
 .home-container{
 
-margin-top: 80px;
+margin-top: 60px;
 }
 .login-form{
   margin-top:80px;
@@ -203,6 +204,17 @@ fieldset .alignRight {
     opacity: 0.8;
     cursor: pointer;
 }
+.sign-in-form{
+  border: solid black 2px;
+}
+.create-pic{
+  max-width: 100px;
+}
+.center-pic{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 @media only screen and (max-width: 800px) {
   .navLinks{
     margin-top: 0;
@@ -213,8 +225,9 @@ fieldset .alignRight {
  
   }
   .home-screen {
-    border: none;
+    border: 10px solid white;
     margin-top: 90px;
+    height: 400px;
   }
   .home-screen h1 {
     letter-spacing: .2em;

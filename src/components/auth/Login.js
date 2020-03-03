@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import bg5 from "../../home/bg-5.jpeg";
 
+import UserManager from "../../modules/UserManager";
 const Login = props => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
 
@@ -10,24 +10,26 @@ const Login = props => {
     stateToChange[evt.target.id] = evt.target.value;
     setCredentials(stateToChange);
   };
+  
 
-  const handleLogin = (e) => {
+  const validateLogin = e => {
     e.preventDefault();
-    /*
-        For now, just store the email and password that
-        the customer enters into session storage.
-        ...Let's just trust the user... That's a good idea, right????
-    */
-    sessionStorage.setItem(
-      "credentials",
-      JSON.stringify(credentials)
-    );
-    props.history.push("/");
+    UserManager.checkProfile(credentials).then(userInfo=> {
+    if(userInfo.length===0){
+      window.alert("I am sorry, there wasn't an account that matched that email")
+    } else if(credentials.password===userInfo[0].password){
+      props.setUser(userInfo[0])
+      props.history.push("/");
+    } else{
+      window.alert('Sorry, the password or email did not match')
+    }
+    })
+
   }
 
   return (
-    <form className="login-form" onSubmit={handleLogin} style={{backgroundImage: bg5}}>
-      <fieldset>
+    <form className="login-form">
+      <fieldset className="sign-in-form">
         <h3>Please sign in</h3>
         <div className="formgrid">
           <input onChange={handleFieldChange} type="email"
@@ -42,7 +44,9 @@ const Login = props => {
             required="" />
           <label htmlFor="inputPassword">Password</label>
         </div>
-        <button type="submit">Sign in</button>
+        <div className="button-container">
+        <button type="submit" className="ui inverted primary button" onClick={validateLogin}>Sign in</button>
+        </div>
       </fieldset>
     </form>
   );

@@ -7,32 +7,39 @@ import MyPhotoEditForm from "./myPhotos/MyPhotoEditForm";
 import PhotoDetails from "./myPhotos/PhotoDetails";
 import ScottCard from "./m_scott/ScottCard";
 import Login from "./auth/Login";
+import CreateCardForm from  "./create/CreateCardForm";
 
 
-const ApplicationViews = () => {
-  const isAuthenticated = () => sessionStorage.getItem("credentials") !== null;
+const ApplicationViews = (props) => {
+  const setUser = props.setUser;
+  const hasUser = props.hasUser
     return (
       <React.Fragment>
            <Route 
       path="/login"
-     component = {Login}
+      render={props=> {
+        return <Login  setUser={setUser} {...props} />
+      }}
+      />
+           <Route 
+      path="/create"
+      render={props=> {
+        return <CreateCardForm {...props} />
+      }}
       />
         <Route
           exact
           path="/"
           render={props => {
-            if(isAuthenticated()){
-              return <HomeList />;
-            } else {
-              return <Redirect to="/login" />
-            }
+              return <HomeList {...props} hasUser={hasUser}/>;
+          
            
           }}
         />
         <Route
           exact path="/myphotos"
           render={props => {
-            if(isAuthenticated()){
+            if(hasUser){
             return <MyPhotoList {...props}/>;}
             else {
               return <Redirect to ="/login"/>
@@ -42,7 +49,7 @@ const ApplicationViews = () => {
         <Route
           exact path="/myphotos/new"
           render={props => {
-            if(isAuthenticated()){
+            if(hasUser){
             return <MyPhotoForm {...props}/>;}
             else {
               return <Redirect to ="/login"/>
@@ -52,7 +59,7 @@ const ApplicationViews = () => {
         <Route 
         exact path="/myphotos/:photoId(\d+)/edit"
         render={props => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <MyPhotoEditForm {...props} />
           } else {
             return <Redirect to="/login" />
@@ -62,7 +69,7 @@ const ApplicationViews = () => {
         <Route 
         exact path="/myphotos/:photoId(\d+)/"
         render={props => {
-          if(isAuthenticated()){
+          if(hasUser){
             return <PhotoDetails  photoId={parseInt(props.match.params.photoId)} {...props}/>}
             else{
               return <Redirect to="/login" />
@@ -73,7 +80,7 @@ const ApplicationViews = () => {
         <Route 
         path="/scottqoute"
         render={props=> {
-          if(isAuthenticated()){
+          if(hasUser){
           return <ScottCard />;}
           else{
             return <Redirect to="/login" />
