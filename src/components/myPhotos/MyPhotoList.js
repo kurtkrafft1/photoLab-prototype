@@ -5,11 +5,13 @@ import PhotographyMaster from "../../modules/PhotographyMaster";
 
 
 const MyPhotoList = props => {
+  
   const [photos, setPhotos] = useState([]);
+  const user=JSON.parse(sessionStorage.getItem("credentials"))
 
   const getPhotos = () => {
-    PhotographyMaster.getAll().then(photosFromAPI => {
-      console.log(photosFromAPI);
+    PhotographyMaster.getAllById(user.id).then(photosFromAPI => {
+      // console.log(photosFromAPI);
       setPhotos(photosFromAPI);
     });
   };

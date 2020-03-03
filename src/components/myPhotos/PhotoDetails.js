@@ -13,7 +13,7 @@ const PhotoDetails = props => {
     useEffect(()=> {
         
         PhotographyMaster.getOne(props.photoId).then(photo=> {
-            console.log(photo)
+
             setPhoto({
                 title: photo.name,
                 description: photo.description,
@@ -43,7 +43,7 @@ const PhotoDetails = props => {
             <div className="newRoot">
                 <div className="button-container">
                 <i id="icons"className=" big arrow alternate circle left icon" onClick={()=> props.history.push("/myphotos")}></i>
-                <i id="icons"class="big edit outline icon" onClick={()=> props.history.push(`/myphotos/${props.photoId}/edit`)}></i>
+                <i id="icons"className="big edit outline icon" onClick={()=> props.history.push(`/myphotos/${props.photoId}/edit`)}></i>
                 </div>
             <div className="Viewcard">
                 <div className="Viewcard-content">

@@ -8,6 +8,7 @@ import PhotoDetails from "./myPhotos/PhotoDetails";
 import ScottCard from "./m_scott/ScottCard";
 import Login from "./auth/Login";
 import CreateCardForm from  "./create/CreateCardForm";
+import FriendsPhotoList from "./friendsPhotos/FriendsPhotosList";
 
 
 const ApplicationViews = (props) => {
@@ -87,18 +88,18 @@ const ApplicationViews = (props) => {
           }
         }}
         />
-        {/* <Route
+        <Route
         path="/friendsphotos"
         render={props=> {
-          if(isAuthenticated()){
-            return <FriendsPhotoList />;}
+          if(hasUser){
+            return <FriendsPhotoList {...props}/>;}
           //   UPPERCASE THIS L WHEN READY
           else{
             return <Redirect to="/login" />
           }
         }}
         />
-        <Route 
+        {/* <Route 
         path="/settings"
         render={props => {
             return <Settings />;

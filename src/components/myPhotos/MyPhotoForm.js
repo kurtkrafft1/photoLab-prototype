@@ -3,8 +3,9 @@ import PhotographyMaster from "../../modules/PhotographyMaster";
 import "./MyPhotoForm.css"; 
 
 const MyPhotoForm = props => {
-    const [newPhoto, setNewPhoto] = useState({userId: 1, title: "", description: "", url: ""})
+    const [newPhoto, setNewPhoto] = useState({userId: "", title: "", description: "", url: ""})
     const [isLoading, setIsLoading] = useState(false)
+    const activeUser = JSON.parse(sessionStorage.getItem('credentials'));
 
     const handleFieldChange = evt => {
         const stateToChange = {...newPhoto}
@@ -18,11 +19,12 @@ const MyPhotoForm = props => {
         } else{
             setIsLoading(true)
             const Photo = {
-                userId: newPhoto.userId,
+                userId: activeUser.id,
                 title: newPhoto.title,
                 description: newPhoto.description,
                 url: newPhoto.url
             }
+            console.log(Photo)  
             PhotographyMaster.addNewPhoto(Photo).then(()=> props.history.push('/myphotos'))
         }
      
@@ -49,7 +51,7 @@ const MyPhotoForm = props => {
                     <img className="newImg" src={newPhoto.url} />
                 </picture>
             </div>
-            <button type="button" id="btn-submit"className = "ui secondary basic button" onClick={postNewPhoto}>Submit</button>
+            <button type="button" disabled={isLoading} id="btn-submit"className = "ui secondary basic button" onClick={postNewPhoto}>Submit</button>
         </div>
 
       </>

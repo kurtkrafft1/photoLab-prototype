@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react" ;
 import UserManager from "../../modules/UserManager";
 
 const CreateCardForm = (props) => {
-    const [user, setUser] = useState({username:"", email: "", password: "",confirmedPassword:"", profPic:"" })
-    const [credentials, setCredentials] = useState({username:"", email: "", password: "", profPic:"" });
+    const [user, setUser] = useState({username:"", email: "", password: "",confirmedPassword:"", profPic:"", id:"" })
+    const [credentials, setCredentials] = useState({username:"", email: "", password: "", profPic:"", id:"" });
     const [isLoading, setIsLoading] = useState({})
 
     const handleFieldChange = evt => {
@@ -13,7 +13,6 @@ const CreateCardForm = (props) => {
     }
     const postNewAccount = evt => {
         evt.preventDefault()
-        console.log(user)
         if(user.username===""|| user.password===""||user.email===""){
             window.alert("Please fill out all the required fields")
         }else if (user.password !== user.confirmedPassword){
@@ -27,10 +26,11 @@ const CreateCardForm = (props) => {
                     confirmedPassword: user.confirmedPassword,
                     profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
                 }
-                UserManager.postNewProfile(newUser).then(()=> {
+                UserManager.postNewProfile(newUser).then(jsonUser=> {
+                  console.log(jsonUser)
                     setCredentials(newUser)
                     setIsLoading(true)
-                    props.setUser(newUser)
+                    props.setUser(jsonUser)
                     props.history.push('/')})
             } else {
                 const newUser = {
@@ -40,10 +40,10 @@ const CreateCardForm = (props) => {
                     confirmedPassword: user.confirmedPassword,
                     profPic: user.profPic
                 }
-                UserManager.postNewProfile(newUser).then(()=> {
+                UserManager.postNewProfile(newUser).then(jsonUser=> {
                     setIsLoading(true)
                     setCredentials(newUser)
-                    props.setUser(newUser)
+                    props.setUser(jsonUser)
                     props.history.push('/')
 
                 })
@@ -69,7 +69,7 @@ const CreateCardForm = (props) => {
         <div className="formgrid">
           <input onChange={handleFieldChange} type="username"
             id="username"
-            placeholder="Username address"
+            placeholder="Username"
             required="" autoFocus="" />
           <label htmlFor="inputUsername">Username</label>
           <input onChange={handleFieldChange} type="email"

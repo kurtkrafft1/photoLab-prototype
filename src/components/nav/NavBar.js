@@ -5,12 +5,16 @@ const Navbar = props => {
 
         
  if(props.hasUser){
-    //  console.log(props)
      const user = JSON.parse(sessionStorage.getItem("credentials"))
-     console.log(user)
-     console.log(user.username)
+
     return(
         <header>
+             <div className="userInfo">
+                <p>{user.username}</p>
+                <picture>
+                    <img src={user.profPic} alt="you!" className="profPicIcon" />
+                </picture>
+            </div>
             <NavLink to="/">
             <h1>PH<i className="camera retro icon"></i>TOLAB</h1>
             </NavLink>
@@ -24,9 +28,7 @@ const Navbar = props => {
             <NavLink className="navItem" to="/login">Logout</NavLink>
        
             </div>
-            <div className="userInfo">
-                <p>{user.username}</p>
-            </div>
+           
         </header>
     )
  } else {

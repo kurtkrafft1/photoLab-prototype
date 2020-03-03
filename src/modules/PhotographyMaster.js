@@ -7,6 +7,9 @@ export default {
     getAll() {
         return fetch(`${remoteUrl}myPhotos`).then(r=>r.json())
     },
+    getAllById(id){
+        return fetch(`${remoteUrl}myphotos?userId=${id}&_expand=user`).then(r=>r.json())
+    },
     delete(id){
         return fetch(`${remoteUrl}myPhotos/${id}`, {
             method: "DELETE"

@@ -4,32 +4,56 @@
       "id": 1,
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTuMsC2CMPMOOeV05BXThBdEAUfQ4eY4l8rAp36aUTQm3zEQZzq",
       "title": "Mount Everest",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "userId": 1
     },
     {
       "id": 2,
       "title": "Mount Fun",
       "url": "https://www.colorado.com/sites/default/files/styles/1000x685/public/raspberry_mountain_credit_brianlewismedia_ig__fluid_0.jpg?itok=vOp5en6w",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "userId": 1
     },
     {
       "id": 3,
       "url": "https://media.istockphoto.com/photos/rocky-mountain-peak-picture-id904856396?k=6&m=904856396&s=612x612&w=0&h=ZVZpbtWCmkHLN6cGpRtGdBIhwZZsMwXn5xSL3ThqslU=",
       "title": "Mount Django",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "userId": 1
     },
     {
       "id": 4,
       "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQGPWuoReC8U5CGnUb6Qo9NRDL5T9B4oj-jtbKzHveFB3dR_KqZ",
       "title": "Mount Reiner",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "userId": 1
     },
     {
-      "userId": 1,
+      "userId": 4,
       "title": "More Mountains",
       "description": "new Photo for ya nerd@! aijf asoidjf asidf oiajsdf asdf oiasdf aosdif afiojsd",
       "url": "https://www.worldatlas.com/r/w1200-h701-c1200x701/upload/66/14/d8/kangchenjunga.jpg",
       "id": 5
+    },
+    {
+      "title": "bloobs",
+      "description": "i love me some blueberries",
+      "url": "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/proven-benefits-of-blueberries-1296x728-feature.jpg?w=1155&h=1528",
+      "id": 7
+    },
+    {
+      "id": 8,
+      "userId": 5,
+      "title": "x marks the spot",
+      "url": "https://images.unsplash.com/photo-1519114563721-eb52c00b9129?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+      "description": "its just an x"
+    },
+    {
+      "userId": 4,
+      "title": "bloobs",
+      "description": "blueberries on blueberries!",
+      "url": "https://s7d6.scene7.com/is/image/bjs/22203?$bjs-Zoom$",
+      "id": 9
     }
   ],
   "users": [
@@ -55,6 +79,69 @@
       "confirmedPassword": "q",
       "profPic": "https://vectorified.com/images/no-profile-picture-icon-14.png",
       "id": 3
+    },
+    {
+      "username": "sofia",
+      "email": "Sof@sof.com",
+      "password": "sofia",
+      "confirmedPassword": "sofia",
+      "profPic": "https://i.pinimg.com/originals/e8/39/d9/e839d986903a68a67df6dbbe6d9acda4.jpg",
+      "id": 4
+    },
+    {
+      "username": "X",
+      "email": "X",
+      "password": "X",
+      "confirmedPassword": "X",
+      "profPic": "https://media.istockphoto.com/photos/letter-x-3d-red-isolated-on-white-with-shadow-orthogonal-projection-picture-id688121582?k=6&m=688121582&s=612x612&w=0&h=FoEMjfEgIM3VPaR_WTauid2Ek38bkOFYmdRm6OouSCA=",
+      "id": 5
+    }
+  ],
+  "friends":[
+    {
+      "id":1,
+      "userId":1,
+      "friendUserId":2
+    },
+    {
+      "id":2,
+      "userId":1,
+      "friendUserId":3
+    },
+    {
+      "id":3,
+      "userId":1,
+      "friendUserId":4
+    },
+    {
+      "id":4,
+      "userId":1,
+      "friendUserId":5
+    },
+    {
+      "id":5,
+      "userId":4,
+      "friendUserId":5
+    },
+    {
+      "id":6,
+      "userId":5,
+      "friendUserId":5
+    },
+    {
+      "id":7,
+      "userId":5,
+      "friendUserId":3
+    },
+    {
+      "id":8,
+      "userId":3,
+      "friendUserId":2
+    },
+    {
+      "id":9,
+      "userId":2,
+      "friendUserId":5
     }
   ]
 }
