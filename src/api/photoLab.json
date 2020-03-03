@@ -40,6 +40,21 @@
       "password": "kurt",
       "confirmedPassword": "kurt",
       "profPic": "https://www.rainforest-alliance.org/sites/default/files/styles/750w_585h/public/2016-09/three-toed-sloth.jpg?itok=uWF-NdZZ"
+    },
+    {
+      "username": "JerrySmith",
+      "email": "jerry@smith.com",
+      "password": "j",
+      "profPic": "https://img1.looper.com/img/gallery/the-worst-thing-thats-ever-happened-to-jerry-on-rick-and-morty/intro-1567519981.jpg",
+      "id": 2
+    },
+    {
+      "username": "q",
+      "email": "q",
+      "password": "q",
+      "confirmedPassword": "q",
+      "profPic": "https://vectorified.com/images/no-profile-picture-icon-14.png",
+      "id": 3
     }
   ]
 }

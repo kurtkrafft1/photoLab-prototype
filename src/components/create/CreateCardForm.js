@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react" ;
 import UserManager from "../../modules/UserManager";
 
 const CreateCardForm = (props) => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({username:"", email: "", password: "",confirmedPassword:"", profPic:"" })
     const [credentials, setCredentials] = useState({username:"", email: "", password: "", profPic:"" });
     const [isLoading, setIsLoading] = useState({})
 
@@ -13,22 +13,24 @@ const CreateCardForm = (props) => {
     }
     const postNewAccount = evt => {
         evt.preventDefault()
+        console.log(user)
         if(user.username===""|| user.password===""||user.email===""){
             window.alert("Please fill out all the required fields")
-        }if (user.password !== user.confirmedPassword){
+        }else if (user.password !== user.confirmedPassword){
             window.alert("The Passwords entered do not match")
         }else {
-            if(user.url===""){
+            if(user.profPic===""){
                 const newUser = {
                     username: user.username,
                     email: user.email,
                     password: user.password,
                     confirmedPassword: user.confirmedPassword,
-                    url: "https://vectorified.com/images/no-profile-picture-icon-14.png"
+                    profPic: "https://vectorified.com/images/no-profile-picture-icon-14.png"
                 }
                 UserManager.postNewProfile(newUser).then(()=> {
                     setCredentials(newUser)
                     setIsLoading(true)
+                    props.setUser(newUser)
                     props.history.push('/')})
             } else {
                 const newUser = {
@@ -41,6 +43,8 @@ const CreateCardForm = (props) => {
                 UserManager.postNewProfile(newUser).then(()=> {
                     setIsLoading(true)
                     setCredentials(newUser)
+                    props.setUser(newUser)
+                    props.history.push('/')
 
                 })
             }
@@ -55,11 +59,11 @@ const CreateCardForm = (props) => {
             ...Let's just trust the user... That's a good idea, right????
         */
        props.setUser(credentials)
-        props.history.push("/");
+     
       }
     return (
         <>
-         <form className="login-form" onSubmit={handleLogin}>
+         <form className="login-form" >
       <fieldset className="sign-in-form">
         <h3>Create Account</h3>
         <div className="formgrid">
@@ -81,7 +85,7 @@ const CreateCardForm = (props) => {
             type="password" />
           <label htmlFor="inputPassword">Password</label>
           <input onChange={handleFieldChange} type="confirmPassword"
-            id="confirmPassword"
+            id="confirmedPassword"
             placeholder="Confirm Password"
             required="" 
             type="password"/>
