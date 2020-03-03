@@ -24,7 +24,7 @@ const ApplicationViews = (props) => {
            <Route 
       path="/create"
       render={props=> {
-        return <CreateCardForm {...props} />
+        return <CreateCardForm {...props} setUser={setUser}/>
       }}
       />
         <Route

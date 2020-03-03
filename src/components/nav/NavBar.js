@@ -6,7 +6,7 @@ const Navbar = props => {
         
  if(props.hasUser){
     //  console.log(props)
-     const user = sessionStorage.getItem("credentials")
+     const user = JSON.parse(sessionStorage.getItem("credentials"))
      console.log(user)
      console.log(user.username)
     return(
